@@ -1,3 +1,4 @@
+```sql
 CREATE TABLE pais (
 id INT NOT NULL AUTO_INCREMENT,
 nombre VARCHAR(50),
@@ -129,7 +130,7 @@ CONSTRAINT PK_VENTA_Id PRIMARY KEY (id),
 CONSTRAINT FK_VentaCliente FOREIGN KEY (idcliente_fk) REFERENCES cliente(id),
 CONSTRAINT FK_VentaEmpleado FOREIGN KEY (idempleado_fk) REFERENCES empleado(id),
 CONSTRAINT FK_VentaSucursal FOREIGN KEY (idsucursal_fk) REFERENCES sucursal(id),
-CONSTRAINT FK_VentaProducto FOREIGN KEY (idproducto) REFERENCES productos(id) -- Asegúrate de que este id esté relacionado correctamente
+CONSTRAINT FK_VentaProducto FOREIGN KEY (idproducto) REFERENCES productos(id) 
 );
 
 CREATE TABLE metodo_pago (
@@ -263,3 +264,4 @@ JOIN sucursal ON venta.idsucursal_fk = sucursal.id;
 SELECT venta.id, metodo_pago.id
 FROM venta
 JOIN metodo_pago ON venta.id = metodo_pago.idventa_fk;
+```
